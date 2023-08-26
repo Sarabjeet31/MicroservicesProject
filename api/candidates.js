@@ -96,9 +96,9 @@ app.post('/candidates',AdminOnly,async (req, res) => {
 })
 
 app.put('/candidates',AdminOnly,async (req, res) => {
-    const {username,field,value} = req.body;
+    const {Name,field,value} = req.body;
     try {
-        const update = await Candidate.updateOne({username:username},{$set:{marks:value}});
+        const update = await Candidate.updateOne({Name:Name},{$set:{Marks:value}});
         if(update.modifiedCount!=0){
             res.json("User Modified");
         } else{

@@ -119,7 +119,7 @@ app.post('/api/candidates',(req, res) => {
 })
 
 app.put('/api/candidates',(req, res) => {
-    const {YourUsername, username, value} = req.body;
+    const {YourUsername, Name, value} = req.body;
     fetch("http://localhost:8002/candidates",{
         method:"PUT",
         headers:{
@@ -127,7 +127,7 @@ app.put('/api/candidates',(req, res) => {
         },
         body: JSON.stringify({
             YourUsername: YourUsername,
-            username:username,
+            Name:Name,
             value:value
         })
     }).then((resp) => {
